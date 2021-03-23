@@ -5,9 +5,10 @@ body {
 }
 .profile__container {
   display: flex;
-  width: 80%;
+  width: 90%;
   max-width: 1140px;
   padding: 0 1rem;
   flex-wrap: wrap;
   margin: 0 auto;
+  margin-top: 2rem;
 }
