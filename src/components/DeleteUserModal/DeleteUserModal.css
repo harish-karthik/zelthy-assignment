@@ -1,0 +1,7 @@
+.deleteModal__content {
+  padding: 1rem 1.5rem;
+}
+.deleteModal__content p {
+  margin: 0;
+  font-size: 14px;
+}

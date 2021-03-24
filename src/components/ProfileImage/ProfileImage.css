@@ -3,6 +3,7 @@
   min-height: 175px;
   background-color: #f4f4f4;
   margin-bottom: 1rem;
+  z-index: 1;
 }
 .card__image {
   max-width: 175px;

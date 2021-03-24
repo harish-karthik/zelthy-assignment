@@ -1,0 +1,51 @@
+.editModal__form {
+  padding: 1rem 1.5rem;
+}
+.editModal__formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.editModal__controlLabel {
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+}
+.editModal__formControl {
+  padding: 0.5rem 0.75rem;
+  font-size: 14px;
+  border: 1px solid #cecece;
+  box-shadow: none;
+  outline: 0;
+  border-radius: 5px;
+}
+.editModal__required {
+  color: red;
+  display: inline-block;
+  font-size: 20px;
+  position: relative;
+  top: 5px;
+  margin-right: 0.25rem;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+@media screen and (min-width: 992px) {
+  .editModal__formGroup {
+    flex-direction: row;
+    margin-bottom: 1.5rem;
+  }
+  .editModal__controlLabel {
+    margin-right: 0.5rem;
+    flex: 0 0 30%;
+    margin-bottom: 0;
+    text-align: right;
+  }
+  .editModal__formControl {
+    flex: 0 0 calc(70% - 33px);
+  }
+}

@@ -8,16 +8,6 @@
 .card__content {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.card__imagecontainer {
-  position: relative;
-  min-height: 175px;
-  background-color: #f4f4f4;
-  margin-bottom: 1rem;
-}
-.card__image {
-  max-width: 175px;
-  margin: 0 auto;
-}
 .card__textcontainer {
   padding: 1rem;
 }
