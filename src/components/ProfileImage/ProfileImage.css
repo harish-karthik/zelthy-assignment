@@ -1,0 +1,16 @@
+.card__imagecontainer {
+  position: relative;
+  min-height: 175px;
+  background-color: #f4f4f4;
+  margin-bottom: 1rem;
+}
+.card__image {
+  max-width: 175px;
+  margin: 0 auto;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}

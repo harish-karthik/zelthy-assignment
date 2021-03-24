@@ -42,15 +42,3 @@
     max-width: 25%;
   }
 }
-@media screen and (min-width: 1024px) and (orientation: landscape) {
-  .card {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
-  }
-}
-.hide {
-  display: none;
-}
-.show {
-  display: block;
-}

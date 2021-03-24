@@ -10,7 +10,16 @@ export default function App() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((data) => {
-        setUserData(data);
+        let interpolatedUserInfo = data.map((userData) => ({
+          username: userData.username,
+          id: userData.id,
+          name: userData.name,
+          phone: userData.phone,
+          website: userData.website,
+          email: userData.email,
+          liked: false,
+        }));
+        setUserData(interpolatedUserInfo);
         setIsLoading(false);
       });
   }, []);
@@ -22,7 +31,7 @@ export default function App() {
       <ProfileCard
         key={userInfo.id}
         id={userInfo.id}
-        userName={userInfo.username}
+        username={userInfo.username}
         name={userInfo.name}
         phone={userInfo.phone}
         email={userInfo.email}
