@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.93767b11.chunk.css",
+    "main.js": "/static/js/main.67baac96.chunk.js",
+    "main.js.map": "/static/js/main.67baac96.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.25ccb047.js",
+    "runtime-main.js.map": "/static/js/runtime-main.25ccb047.js.map",
+    "static/js/2.2259ee60.chunk.js": "/static/js/2.2259ee60.chunk.js",
+    "static/js/2.2259ee60.chunk.js.map": "/static/js/2.2259ee60.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.93767b11.chunk.css.map": "/static/css/main.93767b11.chunk.css.map",
+    "static/js/2.2259ee60.chunk.js.LICENSE.txt": "/static/js/2.2259ee60.chunk.js.LICENSE.txt",
+    "static/media/envelope.938d692b.svg": "/static/media/envelope.938d692b.svg",
+    "static/media/globe-solid.6a7593bd.svg": "/static/media/globe-solid.6a7593bd.svg",
+    "static/media/heart-solid.3b2c6b0a.svg": "/static/media/heart-solid.3b2c6b0a.svg",
+    "static/media/heart.e600f7d2.svg": "/static/media/heart.e600f7d2.svg",
+    "static/media/pen-solid.90629aa4.svg": "/static/media/pen-solid.90629aa4.svg",
+    "static/media/phone-solid.62b69687.svg": "/static/media/phone-solid.62b69687.svg",
+    "static/media/trash-alt.396f55f6.svg": "/static/media/trash-alt.396f55f6.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.25ccb047.js",
+    "static/js/2.2259ee60.chunk.js",
+    "static/css/main.93767b11.chunk.css",
+    "static/js/main.67baac96.chunk.js"
+  ]
+}
