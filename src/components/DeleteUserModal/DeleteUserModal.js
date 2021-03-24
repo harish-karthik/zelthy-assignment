@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import AnimatedModal from "../AnimatedModal/AnimatedModal";
+import {
+  UtilityStateContext,
+  UtilityStateDispatchContext,
+} from "../../context/Utilities.context";
+import { UserStateDispatchContext } from "../../context/UserData.context";
 import "./DeleteUserModal.css";
 
-function EditDetailModal(props) {
-  const { isDeleteUserModalOpen, closeDeleteUserModal } = props;
+function EditDetailModal() {
+  const { isDeleteUserModalOpen, userIdToModify } = useContext(
+    UtilityStateContext
+  );
+  const UtilityDispatch = useContext(UtilityStateDispatchContext);
+  const UserStateDispatch = useContext(UserStateDispatchContext);
+  function confirmModalAction() {
+    UserStateDispatch({ type: "DELETE-USER", id: userIdToModify });
+    UtilityDispatch({ type: "HIDE-DELETE-USER-MODAL" });
+  }
   return (
     <AnimatedModal isModalOpen={isDeleteUserModalOpen}>
       <header className='modal__header'>
         <h1 className='modal__title'>Delete User?</h1>
         <button
           className='modal__button--header'
-          onClick={closeDeleteUserModal}
+          onClick={() => {
+            UtilityDispatch({ type: "HIDE-DELETE-USER-MODAL" });
+          }}
         >
           X
         </button>
@@ -24,11 +39,15 @@ function EditDetailModal(props) {
       <footer className='modal__footer'>
         <button
           className='modal__button--cancel'
-          onClick={closeDeleteUserModal}
+          onClick={() => {
+            UtilityDispatch({ type: "HIDE-DELETE-USER-MODAL" });
+          }}
         >
           Cancel
         </button>
-        <button className='modal__button--confirm'>OK</button>
+        <button className='modal__button--confirm' onClick={confirmModalAction}>
+          OK
+        </button>
       </footer>
     </AnimatedModal>
   );

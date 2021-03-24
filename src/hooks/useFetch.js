@@ -1,24 +1,12 @@
-import { useEffect, useState } from "react";
+import { useReducer, useEffect } from "react";
 
-function useFetch() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [userData, setUserData] = useState(() => {
-    let val;
-    try {
-      val = JSON.parse(window.localStorage.getItem("userData") || String([]));
-    } catch (e) {
-      val = [];
-    }
-    return val;
-  });
+export function useFetch(key, defaultValue, reducer) {
+  const [state, dispatch] = useReducer(reducer, defaultValue);
 
   useEffect(() => {
-    if (window.localStorage.getItem("userData") !== null) {
-      let interpolatedUserInfo = JSON.parse(
-        window.localStorage.getItem("userData")
-      );
-      setUserData(interpolatedUserInfo);
-      setIsLoading(false);
+    if (window.localStorage.getItem(key) !== null) {
+      let interpolatedUserInfo = JSON.parse(window.localStorage.getItem(key));
+      dispatch({ type: "FETCH-SUCCESS", payload: interpolatedUserInfo });
     } else {
       fetch("https://jsonplaceholder.typicode.com/users")
         .then((response) => response.json())
@@ -32,16 +20,16 @@ function useFetch() {
             email: userData.email,
             liked: false,
           }));
-          setUserData(interpolatedUserInfo);
-          window.localStorage.setItem(
-            "userData",
-            JSON.stringify(interpolatedUserInfo)
-          );
-          setIsLoading(false);
+          dispatch({ type: "FETCH-SUCCESS", payload: interpolatedUserInfo });
         });
     }
+    // eslint-disable-next-line
   }, []);
-  return { isLoading, userData };
+
+  useEffect(() => {
+    window.localStorage.setItem(key, JSON.stringify(state.users));
+  }, [state, key]);
+  return [state, dispatch];
 }
 
 export default useFetch;
