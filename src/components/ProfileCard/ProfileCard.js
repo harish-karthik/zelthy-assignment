@@ -3,6 +3,7 @@ import ProfileImage from "../ProfileImage/ProfileImage";
 import { ReactComponent as PhoneIconComponent } from "../../assets/icons/phone-solid.svg";
 import { ReactComponent as EnvelopeIconComponent } from "../../assets/icons/envelope.svg";
 import { ReactComponent as GlobeIconComponent } from "../../assets/icons/globe-solid.svg";
+import CardActionFooter from "../CardActionFooter/CardActionFooter";
 import "./ProfileCard.css";
 
 function ProfileCard(props) {
@@ -32,6 +33,7 @@ function ProfileCard(props) {
             {website}
           </p>
         </div>
+        <CardActionFooter />
       </div>
     </article>
   );

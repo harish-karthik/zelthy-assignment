@@ -1,0 +1,18 @@
+.cardfooter {
+  display: flex;
+}
+.cardfooter__button {
+  flex-grow: 1;
+  padding: 8px 0;
+  border: 0;
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+.cardfooter__button svg {
+  width: 25px;
+  height: 25px;
+  transition: all 0.3s ease-in-out;
+}
+.cardfooter__button:hover svg {
+  transform: scale(1.2);
+}

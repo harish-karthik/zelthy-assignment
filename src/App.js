@@ -1,28 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import LoadingAnimation from "./components/LoadingAnimation/LoadingAnimation";
 import ProfileCard from "./components/ProfileCard/ProfileCard";
+import useFetch from "./hooks/useFetch";
 import "./App.css";
 
 export default function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [userData, setUserData] = useState([]);
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((data) => {
-        let interpolatedUserInfo = data.map((userData) => ({
-          username: userData.username,
-          id: userData.id,
-          name: userData.name,
-          phone: userData.phone,
-          website: userData.website,
-          email: userData.email,
-          liked: false,
-        }));
-        setUserData(interpolatedUserInfo);
-        setIsLoading(false);
-      });
-  }, []);
+  const { isLoading, userData } = useFetch();
   let userMarkup;
   if (isLoading) {
     userMarkup = <LoadingAnimation />;
